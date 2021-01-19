@@ -15,7 +15,7 @@ if __name__ == '__main__':
         """Displays hello hbhb!"""
         return 'Hello HBNB!'
 
-    @app.route('/HBNB', strict_slashes=False)
+    @app.route('/hbnb', strict_slashes=False)
     def show_hbnb():
         """Displays HBNB"""
         return 'HBNB'

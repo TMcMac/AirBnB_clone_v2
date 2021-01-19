@@ -30,4 +30,17 @@ if __name__ == '__main__':
         phrase = text.replace('_', ' ')
         return "C " + phrase
 
+    @app.route('/python', defaults={'text': None}, strict_slashes=False)
+    @app.route('/python/<text>', strict_slashes=False)
+    def python_is_cool(text):
+        """
+        takes the text from the url and returns
+        is in a phrase or a default
+        """
+        if text is None:
+            phrase = "is cool"
+        else:
+            phrase = text.replace('_', ' ')
+
+        return "Python " + phrase
     app.run(host='0.0.0.0', port='5000')
