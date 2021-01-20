@@ -20,6 +20,7 @@ class State(BaseModel, Base):
         @property
         def cities(self):
             """Get a list of cities and their states"""
+            from models import storage
             cities = []
             """All_cities should be a dict of all current
             cities from __objects"""
