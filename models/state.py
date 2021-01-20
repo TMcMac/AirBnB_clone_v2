@@ -24,7 +24,7 @@ class State(BaseModel, Base):
             cities = []
             """All_cities should be a dict of all current
             cities from __objects"""
-            all_cities = models.storage.all(City)
+            all_cities = storage.all(City)
             for city in all_cities.values():
                 """Iterate through all cities and if the
                 city.state_id is eqaul to the current state id
