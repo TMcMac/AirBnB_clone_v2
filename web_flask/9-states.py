@@ -22,11 +22,13 @@ if __name__ == '__main__':
         results = states.values()
         if sid is None:
             alpha_states = sorted(results, key=attrgetter('name'))
-            return render_template('9-states.html', states=alpha_states, sid=sid)
+            return render_template('9-states.html',
+                                   states=alpha_states, sid=sid)
         else:
             for state in results:
                 if state.id == sid:
-                    return render_template('9-states.html', states=state, sid=state.id)
+                    return render_template('9-states.html',
+                                           states=state, sid=state.id)
             return render_template('9-states.html', states=None, sid=sid)
 
     @app.teardown_appcontext
