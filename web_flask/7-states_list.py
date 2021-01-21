@@ -7,7 +7,7 @@ if __name__ == '__main__':
     from models.state import State
 
     app = Flask(__name__)
-    
+
     @app.teardown_appcontext
     def teardown(self):
         """Call close"""
@@ -23,6 +23,5 @@ if __name__ == '__main__':
         for state in states:
             print(state)
         return render_template('7-states_list.html', states=states)
-
 
     app.run(host='0.0.0.0', port='5000')
