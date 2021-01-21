@@ -13,13 +13,13 @@ if __name__ == '__main__':
         """Call close"""
         storage.close()
 
-    app.route('/states_list', strict_slashes=False)
+    @app.route('/states_list', strict_slashes=False)
     def state_list():
         """
         call a page that presents all state objects in storage.all
         and presents them in an unordered list in alpha order
         """
-        states = storage.all("States").values
+        states = storage.all("States").values()
         return render_template('7-states_list.html', states=states)
 
 
