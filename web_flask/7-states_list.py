@@ -19,9 +19,9 @@ if __name__ == '__main__':
         call a page that presents all state objects in storage.all
         and presents them in an unordered list in alpha order
         """
-        states = storage.all('State').values()
-        for state in states:
-            print(state)
-        return render_template('7-states_list.html', states=states)
+        states = storage.all('State')
+        results = states.values()
+        alpha_states = sorted(results, key=attrgetter('name'))
+        return render_template('7-states_list.html', states=alpha_states)
 
     app.run(host='0.0.0.0', port='5000')
